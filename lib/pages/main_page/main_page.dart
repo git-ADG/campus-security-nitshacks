@@ -64,31 +64,31 @@ class _MainPageState extends State<MainPage> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
-                CupertinoIcons.profile_circled,
+                CupertinoIcons.location_solid,
               ),
               label: "Account",
             ),
             BottomNavigationBarItem(
               label: "Home",
               icon: Icon(
-                Icons.home,
+                Icons.info_outlined,
               ),
             ),
             BottomNavigationBarItem(
               label: "Cart",
               icon: Icon(
-                CupertinoIcons.cart,
+                Icons.crisis_alert_outlined,
               ),
             ),
             BottomNavigationBarItem(
               label: "Notifications",
               icon: Icon(
-                CupertinoIcons.bell,
+                Icons.home_outlined,
               ),
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                CupertinoIcons.profile_circled,
+                Icons.person_outline_sharp,
               ),
               label: "Account",
             ),

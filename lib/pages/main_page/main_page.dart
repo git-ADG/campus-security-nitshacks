@@ -1,3 +1,4 @@
+import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:campus_security_nithacks/pages/pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _MainPageState extends State<MainPage> {
     const SplashScreen(),
     const SplashScreen(),
     const SplashScreen(),
+    const SplashScreen()
   ];
   int currentIndex = 1;
 
@@ -34,7 +36,7 @@ class _MainPageState extends State<MainPage> {
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) async {
-        if(currentIndex != 1){
+        if (currentIndex != 1) {
           navigate(1);
           return;
         }
@@ -48,6 +50,13 @@ class _MainPageState extends State<MainPage> {
       },
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
+          enableFeedback: false,
+          backgroundColor: dark,
+          unselectedItemColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedFontSize: 0,
+          unselectedFontSize: 0,
           selectedItemColor: Colors.red,
           type: BottomNavigationBarType.fixed,
           onTap: navigate,
@@ -76,6 +85,12 @@ class _MainPageState extends State<MainPage> {
               icon: Icon(
                 CupertinoIcons.bell,
               ),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                CupertinoIcons.profile_circled,
+              ),
+              label: "Account",
             ),
           ],
         ),

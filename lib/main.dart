@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'pages/pages.dart';
 
-import 'pages/splash_screen/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +13,7 @@ class CampusSecurity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: SplashScreen(),
+      home: FingerprintPage(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:flutter/material.dart';
 
 Future<bool> showExitWarning(BuildContext context) async {
@@ -27,8 +28,8 @@ Future<bool> showExitWarning(BuildContext context) async {
                           fontWeight: FontWeight.bold),
                     )),
                 Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                      color: dark, borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                       onPressed: () {
                         choice = true;

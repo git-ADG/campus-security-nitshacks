@@ -10,7 +10,7 @@ class FingerprintPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: InkWell(
-            onLongPress: () => Navigator.push(
+            onLongPress: () => Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const MainPage(),

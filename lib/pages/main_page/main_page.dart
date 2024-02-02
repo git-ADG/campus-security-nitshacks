@@ -20,7 +20,6 @@ class _MainPageState extends State<MainPage> {
     const SplashScreen(),
     const SplashScreen(),
     const SplashScreen(),
-    const SplashScreen(),
     const SplashScreen()
   ];
   int currentIndex = 1;
@@ -66,24 +65,18 @@ class _MainPageState extends State<MainPage> {
               icon: Icon(
                 CupertinoIcons.location_solid,
               ),
-              label: "Account",
+              label: "Map",
             ),
             BottomNavigationBarItem(
-              label: "Home",
+              label: "report",
               icon: Icon(
                 Icons.info_outlined,
               ),
             ),
             BottomNavigationBarItem(
-              label: "Cart",
+              label: "alert",
               icon: Icon(
                 Icons.crisis_alert_outlined,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: "Notifications",
-              icon: Icon(
-                Icons.home_outlined,
               ),
             ),
             BottomNavigationBarItem(

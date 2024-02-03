@@ -1,5 +1,6 @@
 import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:campus_security_nithacks/pages/signup_page/signup_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../utils/utils.dart';
@@ -15,6 +16,31 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> loginUserWithEmailAndPassword(BuildContext context) async {
+    try {
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passController.text.trim(),
+      );
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MainPage(),
+        ),
+      );
+    } catch (error) {
+      print("Login error: $error");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Failed to login. Please check your credentials."),
+        ),
+      );
+    }
+  }
+
   bool isUserLogged = false;
 
   //password showing boolean
@@ -217,8 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                                                     color: Colors.white,
                                                   )),
                                         hintText: "Password",
-                                        hintStyle:
-                                            TextStyle(color: fontColor)),
+                                        hintStyle: TextStyle(color: fontColor)),
                                     controller: passController,
                                     validator: (value) {
                                       // if (value!.isEmpty) {
@@ -242,11 +267,7 @@ class _LoginPageState extends State<LoginPage> {
                               backgroundColor: MaterialStatePropertyAll(blue),
                             ),
                             onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const MainPage(),
-                                  ));
+                              loginUserWithEmailAndPassword(context);
                             }, //validate(context),
                             child: const Text(
                               'LOGIN',

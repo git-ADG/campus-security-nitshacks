@@ -1,3 +1,4 @@
+import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:campus_security_nithacks/pages/signup_page/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -85,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
     //screen size
     Size size = MediaQuery.of(context).size;
     double height = size.height;
+    double width = size.width;
     //constants
     double padding = 16.0;
     double lFontSize = 40.0;
@@ -92,15 +94,11 @@ class _LoginPageState extends State<LoginPage> {
     double sFontSize = 16;
     Color fontColor = const Color.fromRGBO(151, 150, 161, 1);
     Color fontColor2 = const Color.fromRGBO(91, 91, 94, 1);
-    Color lineColor = const Color.fromRGBO(179, 179, 179, 0.5);
     double sGap = 10;
     double fieldHeight = height * 0.1;
     double lGap = 70.0;
     double buttonHeight = 60;
     double buttonWidth = 248;
-    Color buttonColor = const Color.fromRGBO(254, 114, 76, 1);
-    double lineHeight = 2;
-    double lineWidth = 100;
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) async {
@@ -112,14 +110,15 @@ class _LoginPageState extends State<LoginPage> {
           SystemNavigator.pop();
         }
       },
-      child: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-        body: Builder(builder: (BuildContext context) {
-          return SingleChildScrollView(
-            child: Column(
-              children: [
-                SafeArea(
-                  child: Form(
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+          body: Builder(builder: (BuildContext context) {
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Form(
                     key: _formKey,
                     child: Column(
                       children: [
@@ -129,25 +128,33 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(
                               height: lGap * 1.4,
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(left: padding),
-                              child: Text(
-                                "Login",
-                                style: TextStyle(
-                                    fontSize: lFontSize,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'SofiaPro'),
-                              ),
-                            ),
                             SizedBox(
-                              height: gap,
+                              width: width,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Login",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: lFontSize,
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'SofiaPro'),
+                                  ),
+                                  SizedBox(
+                                    height: gap,
+                                  ),
+                                  Image.asset(
+                                      'assets/images/5500659_Artboard 1 1.png'),
+                                ],
+                              ),
                             ),
                             Padding(
                               padding: EdgeInsets.only(left: padding),
                               child: Text(
                                 "E-mail",
                                 style: TextStyle(
-                                    color: fontColor,
+                                    color: Colors.white,
                                     fontSize: sFontSize,
                                     fontFamily: 'SofiaPro'),
                               ),
@@ -161,9 +168,10 @@ class _LoginPageState extends State<LoginPage> {
                               child: SizedBox(
                                   height: fieldHeight,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                      hintText: "Your email or phone",
-                                    ),
+                                    style: TextStyle(color: Colors.white),
+                                    decoration: InputDecoration(
+                                        hintText: "Your email or phone",
+                                        hintStyle: TextStyle(color: fontColor)),
                                     controller: emailController,
                                     validator: (value) {
                                       if (value!.isEmpty) {
@@ -181,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                               child: Text(
                                 "Password",
                                 style: TextStyle(
-                                    color: fontColor,
+                                    color: Colors.white,
                                     fontSize: sFontSize,
                                     fontFamily: 'SofiaPro'),
                               ),
@@ -195,16 +203,22 @@ class _LoginPageState extends State<LoginPage> {
                               child: SizedBox(
                                   height: fieldHeight,
                                   child: TextFormField(
+                                    style: TextStyle(color: Colors.white),
                                     decoration: InputDecoration(
-                                      suffixIcon: IconButton(
-                                          onPressed: () => showPass(),
-                                          icon: isObscure
-                                              ? const Icon(
-                                                  Icons.visibility)
-                                              : const Icon(
-                                                  Icons.visibility_off)),
-                                      hintText: "Password",
-                                    ),
+                                        suffixIcon: IconButton(
+                                            onPressed: () => showPass(),
+                                            icon: isObscure
+                                                ? const Icon(
+                                                    Icons.visibility,
+                                                    color: Colors.white,
+                                                  )
+                                                : const Icon(
+                                                    Icons.visibility_off,
+                                                    color: Colors.white,
+                                                  )),
+                                        hintText: "Password",
+                                        hintStyle:
+                                            TextStyle(color: fontColor)),
                                     controller: passController,
                                     validator: (value) {
                                       // if (value!.isEmpty) {
@@ -218,17 +232,26 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(
                               height: sGap,
                             ),
-                            SizedBox(
-                              height: lGap,
-                            ),
                           ],
                         ),
                         SizedBox(
                           height: buttonHeight,
                           width: buttonWidth,
                           child: ElevatedButton(
-                            onPressed: () {}, //validate(context),
-                            child: const Text('LOGIN'),
+                            style: const ButtonStyle(
+                              backgroundColor: MaterialStatePropertyAll(blue),
+                            ),
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const MainPage(),
+                                  ));
+                            }, //validate(context),
+                            child: const Text(
+                              'LOGIN',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -240,7 +263,7 @@ class _LoginPageState extends State<LoginPage> {
                             Text(
                               "Don't have an account?",
                               style: TextStyle(
-                                  color: fontColor2,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'SofiaPro'),
                             ),
@@ -253,11 +276,10 @@ class _LoginPageState extends State<LoginPage> {
                                             const SIgnUpPage(),
                                       ));
                                 },
-                                child: Text(
+                                child: const Text(
                                   "Sign Up",
                                   style: TextStyle(
-                                      color: buttonColor,
-                                      fontFamily: 'SofiaPro'),
+                                      color: blue, fontFamily: 'SofiaPro'),
                                 ))
                           ],
                         ),
@@ -293,11 +315,11 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                   ),
-                ),
-              ],
-            ),
-          );
-        }),
+                ],
+              ),
+            );
+          }),
+        ),
       ),
     );
   }

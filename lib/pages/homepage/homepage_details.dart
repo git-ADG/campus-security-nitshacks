@@ -5,8 +5,7 @@ class HomepageDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return // Generated code for this HomePage Widget...
-        GestureDetector(
+    return GestureDetector(
       // onTap: () => _model.unfocusNode.canRequestFocus
       //     ? FocusScope.of(context).requestFocus(_model.unfocusNode)
       //     : FocusScope.of(context).unfocus(),
@@ -20,69 +19,62 @@ class HomepageDetails extends StatelessWidget {
                 Stack(
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0, 0),
+                      alignment: const AlignmentDirectional(0, 0),
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16, 100, 16, 24),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16, 100, 16, 0),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
-                          color: Color(0xFF1E1E1E),
+                          color: const Color(0xFF1E1E1E),
                           elevation: 4,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0, 100, 0, 0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 0, 8, 16),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Align(
+                                      const Align(
                                         alignment: AlignmentDirectional(-1, 0),
                                         child: Text(
                                           'Name',
-                                          // style: FlutterFlowTheme.of(context)
-                                          //     .titleSmall
-                                          //     .override(
-                                          //       fontFamily: 'Readex Pro',
-                                          //       fontWeight: FontWeight.w300,
-                                          //     ),
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: 'Readex Pro',
+                                            fontWeight: FontWeight.w300,
+                                          ),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8, 0, 8, 0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(8, 0, 8, 0),
                                         child: TextFormField(
                                           // controller: _model.textController1,
                                           // focusNode: _model.textFieldFocusNode1,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'Label here...',
-                                            // labelStyle: FlutterFlowTheme.of(context)
-                                            //     .labelMedium,
-                                            // hintStyle: FlutterFlowTheme.of(context)
-                                            //     .labelMedium,
+                                            labelText: ' ',
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                // color: FlutterFlowTheme.of(context)
-                                                //     .alternate,
+                                              borderSide: const BorderSide(
+                                                color: Colors.white,
                                                 width: 2,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(8),
                                             ),
                                             focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                // color: FlutterFlowTheme.of(context)
-                                                //     .primary,
+                                              borderSide: const BorderSide(
+                                                color: Colors.white,
                                                 width: 2,
                                               ),
                                               borderRadius:
@@ -118,39 +110,38 @@ class HomepageDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 0, 8, 16),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Align(
+                                      const Align(
                                         alignment: AlignmentDirectional(-1, 0),
                                         child: Text(
                                           'Email ID',
-                                          // style: FlutterFlowTheme.of(context)
-                                          //     .titleSmall
-                                          //     .override(
-                                          //       fontFamily: 'Readex Pro',
-                                          //       fontWeight: FontWeight.w300,
-                                          //     ),
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: 'Readex Pro',
+                                            fontWeight: FontWeight.w300,
+                                          ),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8, 0, 8, 0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(8, 0, 8, 0),
                                         child: TextFormField(
                                           // controller: _model.textController2,
                                           // focusNode: _model.textFieldFocusNode2,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'Label here...',
+                                            labelText: ' ',
                                             // labelStyle: FlutterFlowTheme.of(context)
                                             //     .labelMedium,
                                             // hintStyle: FlutterFlowTheme.of(context)
                                             // .labelMedium,
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 // color: FlutterFlowTheme.of(context)
                                                 //     .alternate,
                                                 width: 2,
@@ -159,7 +150,7 @@ class HomepageDetails extends StatelessWidget {
                                                   BorderRadius.circular(8),
                                             ),
                                             focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 // color: FlutterFlowTheme.of(context)
                                                 //     .primary,
                                                 width: 2,
@@ -168,7 +159,7 @@ class HomepageDetails extends StatelessWidget {
                                                   BorderRadius.circular(8),
                                             ),
                                             errorBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 // color: FlutterFlowTheme.of(context)
                                                 //     .error,
                                                 width: 2,
@@ -178,7 +169,7 @@ class HomepageDetails extends StatelessWidget {
                                             ),
                                             focusedErrorBorder:
                                                 UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 // color: FlutterFlowTheme.of(context)
                                                 //     .error,
                                                 width: 2,
@@ -197,15 +188,20 @@ class HomepageDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 0, 8, 16),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Align(
+                                      const Align(
                                         alignment: AlignmentDirectional(-1, 0),
                                         child: Text(
                                           'Contact Number',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: 'Readex Pro',
+                                            fontWeight: FontWeight.w300,
+                                          ),
                                           // style: FlutterFlowTheme.of(context)
                                           //     .titleSmall
                                           //     .override(
@@ -215,21 +211,21 @@ class HomepageDetails extends StatelessWidget {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8, 0, 8, 0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(8, 0, 8, 0),
                                         child: TextFormField(
                                           // controller: _model.textController3,
                                           // focusNode: _model.textFieldFocusNode3,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'Label here...',
+                                            labelText: ' ',
                                             // labelStyle: FlutterFlowTheme.of(context)
                                             //     .labelMedium,
                                             // hintStyle: FlutterFlowTheme.of(context)
                                             //     .labelMedium,
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 // color: FlutterFlowTheme.of(context)
                                                 //     .alternate,
                                                 width: 2,
@@ -275,7 +271,7 @@ class HomepageDetails extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8, 8, 8, 0),
                                   child: Row(
@@ -283,6 +279,11 @@ class HomepageDetails extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Recent Access History',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: 'Readex Pro',
+                                          fontWeight: FontWeight.w300,
+                                        ),
                                         // style: FlutterFlowTheme.of(context)
                                         //     .bodyMedium
                                         //     .override(
@@ -291,8 +292,10 @@ class HomepageDetails extends StatelessWidget {
                                         //           .primaryBackground,
                                         //     ),
                                       ),
+                                      SizedBox(width: 8),
                                       Icon(
                                         Icons.arrow_forward_ios,
+                                        color: Colors.white,
                                         // color: FlutterFlowTheme.of(context)
                                         //     .secondaryText,
                                         size: 24,
@@ -302,34 +305,35 @@ class HomepageDetails extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      8, 192, 8, 0),
-                                  // child: FFButtonWidget(
-                                  //   onPressed: () {
-                                  //     print('Button pressed ...');
-                                  //   },
-                                  //   text: 'Delete Account',
-                                  //   options: FFButtonOptions(
-                                  //     width: double.infinity,
-                                  //     height: 40,
-                                  //     padding: EdgeInsetsDirectional.fromSTEB(
-                                  //         24, 0, 24, 0),
-                                  //     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  //         0, 0, 0, 0),
-                                  //     color: Color(0xFFFF4C30),
-                                  //     textStyle: FlutterFlowTheme.of(context)
-                                  //         .titleSmall
-                                  //         .override(
-                                  //           fontFamily: 'Readex Pro',
-                                  //           color: Colors.white,
-                                  //         ),
-                                  //     elevation: 3,
-                                  //     borderSide: BorderSide(
-                                  //       color: Colors.transparent,
-                                  //       width: 1,
-                                  //     ),
-                                  //     borderRadius: BorderRadius.circular(8),
-                                  //   ),
-                                  // ),
+                                      8, 50, 8, 100),
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      foregroundColor: Colors.white,
+                                      primary:
+                                          const Color(0xFFFF4C30), // Text color
+                                      elevation: 3,
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 24, vertical: 0),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      'Delete Account',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'Readex Pro',
+                                      ),
+                                      // style: FlutterFlowTheme.of(context)
+                                      //     .titleSmall
+                                      //     .override(
+                                      //       fontFamily: 'Readex Pro',
+                                      //     ),
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -348,8 +352,8 @@ class HomepageDetails extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                     ),
-                    child: Image.network(
-                      'https://picsum.photos/seed/958/600',
+                    child: Image.asset(
+                      'assets/images/profile_pic.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

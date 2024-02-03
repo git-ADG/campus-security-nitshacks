@@ -1,18 +1,11 @@
-import 'package:firebase_core/firebase_core.dart';
+import 'package:campus_security_nithacks/pages/alert_page/alert_page.dart';
+import 'package:campus_security_nithacks/pages/login_page/login_page.dart';
+import 'package:campus_security_nithacks/pages/signup_page/signup_page.dart';
+import 'package:campus_security_nithacks/pages/warning_pages/alarm_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'firebase_options.dart';
 import 'pages/pages.dart';
-
-Future<int> init() async {
-  Stopwatch stopwatch = Stopwatch()..start();
-  await dotenv.load(fileName: '.env');
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // await LocalDatabase.init();
-  // await UserController.loginSilently().last;
-  stopwatch.stop();
-  return stopwatch.elapsed.inMilliseconds;
-}
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,9 +18,18 @@ class CampusSecurity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FingerprintPage(),
+      routes: {
+        FingerprintPage.routeName: (context) => const FingerprintPage(),
+        LoginPage.routeName: (context) => const LoginPage(),
+        SIgnUpPage.routeName: (context) => const SIgnUpPage(),
+        SplashScreen.routeName: (context) => const SplashScreen(),
+        AlertPage.routeName: (context) => const AlertPage(),
+        AlarmPage.routeName: (context) => const AlarmPage(),
+        MapPage.routeName: (context) => const MapPage(),
+      },
+      initialRoute: FingerprintPage.routeName,
     );
   }
 }

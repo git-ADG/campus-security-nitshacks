@@ -20,7 +20,8 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    const SplashScreen(),
+    const MapPage(),
+    // const SplashScreen(),
     const AlertPage(),
     const AlarmPage(),
     const HomepageDetails(),

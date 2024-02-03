@@ -40,6 +40,7 @@ dependencies:
   fluttertoast: ^8.2.4
   firebase_core: 2.25.3
   flutter_dotenv: ^5.1.0
+  flutter_osm_plugin: ^0.70.4
   image_picker: ^1.0.7
   firebase_auth: 4.17.0
 

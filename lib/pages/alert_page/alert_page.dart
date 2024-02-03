@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 
 class AlertPage extends StatefulWidget {
   const AlertPage({super.key});
+  static const String routeName = "/alertPage";
 
   @override
   State<AlertPage> createState() => _AlertPageState();

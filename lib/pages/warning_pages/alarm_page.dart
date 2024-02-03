@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AlarmPage extends StatefulWidget {
   const AlarmPage({super.key});
+  static const String routeName = "/alarmPage";
 
   @override
   _AlarmPageState createState() => _AlarmPageState();

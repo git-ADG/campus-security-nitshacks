@@ -25,11 +25,11 @@ class _LoginPageState extends State<LoginPage> {
         password: passController.text.trim(),
       );
 
-      Navigator.pushReplacement(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) => MainPage(),
-        ),
+        ),(route) => false,
       );
     } catch (error) {
       print("Login error: $error");

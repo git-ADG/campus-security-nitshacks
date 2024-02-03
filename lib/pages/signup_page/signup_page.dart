@@ -1,4 +1,5 @@
 import 'package:campus_security_nithacks/pages/login_page/login_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../config/utils/palette.dart';
@@ -15,6 +16,36 @@ class SIgnUpPage extends StatefulWidget {
 }
 
 class _SIgnUpPageState extends State<SIgnUpPage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> signUpWithEmailAndPassword(BuildContext context) async {
+    try {
+      // Create user with email and password
+      UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passController.text.trim(),
+      );
+
+      // If sign-up is successful, navigate to MainPage
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MainPage(),
+        ),
+        (route) => false,
+      );
+    } catch (error) {
+      // Handle sign-up errors
+      print("Sign-up error: $error");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Failed to sign up. Please try again."),
+        ),
+      );
+    }
+  }
+
   bool isUserLogged = false;
 
   //password showing boolean
@@ -288,11 +319,7 @@ class _SIgnUpPageState extends State<SIgnUpPage> {
                               backgroundColor: MaterialStatePropertyAll(blue),
                             ),
                             onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const MainPage(),
-                                  ));
+                              signUpWithEmailAndPassword(context);
                             }, //validate(context),
                             child: const Text(
                               'SIGN UP',

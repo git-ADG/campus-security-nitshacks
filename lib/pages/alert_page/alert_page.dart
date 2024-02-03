@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 
 class AlertPage extends StatefulWidget {
   const AlertPage({super.key});
+
   static const String routeName = "/alertPage";
 
   @override
@@ -12,7 +13,6 @@ class AlertPage extends StatefulWidget {
 }
 
 class _AlertPageState extends State<AlertPage> {
-
   Future<void> _getImage() async {
     final picker = ImagePicker();
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -73,6 +73,7 @@ class _AlertPageState extends State<AlertPage> {
                         style: TextStyle(color: Colors.white),
                       ),
                       TextFormField(
+                        style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             fillColor: Colors.grey,
                             border: OutlineInputBorder(
@@ -86,6 +87,7 @@ class _AlertPageState extends State<AlertPage> {
                         style: TextStyle(color: Colors.white),
                       ),
                       TextFormField(
+                        style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             fillColor: Colors.grey,
                             border: OutlineInputBorder(
@@ -99,6 +101,7 @@ class _AlertPageState extends State<AlertPage> {
                         style: TextStyle(color: Colors.white),
                       ),
                       TextFormField(
+                        style: TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             fillColor: Colors.grey,
                             border: OutlineInputBorder(

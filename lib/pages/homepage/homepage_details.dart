@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomepageDetails extends StatelessWidget {
@@ -60,10 +61,11 @@ class HomepageDetails extends StatelessWidget {
                                         child: TextFormField(
                                           // controller: _model.textController1,
                                           // focusNode: _model.textFieldFocusNode1,
-                                          autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: ' ',
+                                            hintText: 'Arunaditya Dasgupta',
+                                            hintStyle:
+                                                TextStyle(color: Colors.white),
                                             enabledBorder: UnderlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Colors.white,
@@ -132,10 +134,11 @@ class HomepageDetails extends StatelessWidget {
                                         child: TextFormField(
                                           // controller: _model.textController2,
                                           // focusNode: _model.textFieldFocusNode2,
-                                          autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: ' ',
+                                            hintText: 'adg8503@gmail.com',
+                                            hintStyle:
+                                                TextStyle(color: Colors.white),
                                             // labelStyle: FlutterFlowTheme.of(context)
                                             //     .labelMedium,
                                             // hintStyle: FlutterFlowTheme.of(context)
@@ -216,10 +219,12 @@ class HomepageDetails extends StatelessWidget {
                                         child: TextFormField(
                                           // controller: _model.textController3,
                                           // focusNode: _model.textFieldFocusNode3,
-                                          autofocus: true,
+
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: ' ',
+                                            hintStyle:
+                                                TextStyle(color: Colors.white),
+                                            hintText: '7896947586',
                                             // labelStyle: FlutterFlowTheme.of(context)
                                             //     .labelMedium,
                                             // hintStyle: FlutterFlowTheme.of(context)
@@ -312,8 +317,8 @@ class HomepageDetails extends StatelessWidget {
                                     },
                                     style: ElevatedButton.styleFrom(
                                       foregroundColor: Colors.white,
-                                      primary:
-                                          const Color(0xFFFF4C30), // Text color
+                                      backgroundColor: const Color(0xFFFF4C30),
+                                      // Text color
                                       elevation: 3,
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 24, vertical: 0),
@@ -352,10 +357,7 @@ class HomepageDetails extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                     ),
-                    child: Image.asset(
-                      'assets/images/profile_pic.jpg',
-                      fit: BoxFit.cover,
-                    ),
+                    child: Icon(CupertinoIcons.profile_circled, color: Colors.white,size: 173,)
                   ),
                 ),
               ],

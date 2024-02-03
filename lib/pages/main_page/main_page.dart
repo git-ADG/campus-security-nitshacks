@@ -25,7 +25,7 @@ class _MainPageState extends State<MainPage> {
     const AlarmPage(),
     const HomepageDetails(),
   ];
-  int currentIndex = 1;
+  int currentIndex = 0;
 
   void navigate(int index) {
     setState(() {
@@ -38,8 +38,8 @@ class _MainPageState extends State<MainPage> {
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) async {
-        if (currentIndex != 1) {
-          navigate(1);
+        if (currentIndex != 0) {
+          navigate(0);
           return;
         }
         if (didPop) {

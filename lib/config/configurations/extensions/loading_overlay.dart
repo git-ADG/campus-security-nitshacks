@@ -1,10 +1,11 @@
+import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:flutter/material.dart';
 
 Future<void> showLoadingOverlay(
     {required BuildContext context,
-      ValueNotifier<bool>? isVisible,
-      void Function()? onCompleted,
-      Future<void>? Function()? asyncTask}) async {
+    ValueNotifier<bool>? isVisible,
+    void Function()? onCompleted,
+    Future<void>? Function()? asyncTask}) async {
   isVisible ??= ValueNotifier(true);
   if (asyncTask != null) {
     asyncTask()!.then((value) => isVisible!.value = false);
@@ -25,7 +26,9 @@ Future<void> showLoadingOverlay(
                 child: SizedBox(
                   height: 40,
                   width: 40,
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: red,
+                  ),
                 ),
               );
             });

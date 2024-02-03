@@ -1,5 +1,7 @@
+import 'package:campus_security_nithacks/config/config.dart';
 import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:campus_security_nithacks/pages/signup_page/signup_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../utils/utils.dart';
@@ -15,58 +17,91 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> loginUserWithEmailAndPassword(BuildContext context) async {
+    showLoadingOverlay(
+      context: context,
+      asyncTask: () async {
+        try {
+          UserCredential userCredential =
+              await _auth.signInWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passController.text.trim(),
+          );
+        } catch (error) {
+          print("Login error: $error");
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("Failed to login. Please check your credentials."),
+            ),
+          );
+        }
+      },
+      onCompleted: () {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MainPage(),
+          ),
+          (route) => false,
+        );
+      },
+    );
+  }
+
   bool isUserLogged = false;
 
-  //password showing boolean
+//password showing boolean
   bool isObscure = true;
 
-  //form variables
+//form variables
   final _formKey = GlobalKey<FormState>();
 
-  //controllers
+//controllers
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passController = TextEditingController();
 
-  //function to validate form
-  // void validate(BuildContext context) {
-  //   var user;
-  //   if (_formKey.currentState!.validate()) {
-  //     showLoadingOverlay(
-  //       context: context,
-  //       asyncTask: () async {
-  //         try {
-  //           user = await UserController.login(
-  //               email: emailController.text.toString(),
-  //               password: passController.text.toString());
-  //           isUserLogged = true;
-  //         } catch (error) {
-  //           // Failed login
-  //           toastMessage(error.toString(), context);
-  //         }
-  //       },
-  //       onCompleted: () {
-  //         if (isUserLogged) {
-  //           if (user != null) {
-  //             if (UserController.currentUser!.isSeller) {
-  //               Navigator.pushNamedAndRemoveUntil(
-  //                   context, AdminMainPage.routeName, (route) => false);
-  //             } else {
-  //               Navigator.pushNamedAndRemoveUntil(
-  //                 context,
-  //                 MainPage.routeName,
-  //                     (route) => false,
-  //               );
-  //             }
-  //           }
-  //         }
-  //       },
-  //     );
-  //   } else {
-  //     toastMessage("Please enter proper credentials", context);
-  //   }
-  // }
+//function to validate form
+// void validate(BuildContext context) {
+//   var user;
+//   if (_formKey.currentState!.validate()) {
+//     showLoadingOverlay(
+//       context: context,
+//       asyncTask: () async {
+//         try {
+//           user = await UserController.login(
+//               email: emailController.text.toString(),
+//               password: passController.text.toString());
+//           isUserLogged = true;
+//         } catch (error) {
+//           // Failed login
+//           toastMessage(error.toString(), context);
+//         }
+//       },
+//       onCompleted: () {
+//         if (isUserLogged) {
+//           if (user != null) {
+//             if (UserController.currentUser!.isSeller) {
+//               Navigator.pushNamedAndRemoveUntil(
+//                   context, AdminMainPage.routeName, (route) => false);
+//             } else {
+//               Navigator.pushNamedAndRemoveUntil(
+//                 context,
+//                 MainPage.routeName,
+//                     (route) => false,
+//               );
+//             }
+//           }
+//         }
+//       },
+//     );
+//   } else {
+//     toastMessage("Please enter proper credentials", context);
+//   }
+// }
 
-  //function to show or hide password
+//function to show or hide password
   void showPass() {
     setState(() {
       isObscure = !isObscure;
@@ -217,8 +252,7 @@ class _LoginPageState extends State<LoginPage> {
                                                     color: Colors.white,
                                                   )),
                                         hintText: "Password",
-                                        hintStyle:
-                                            TextStyle(color: fontColor)),
+                                        hintStyle: TextStyle(color: fontColor)),
                                     controller: passController,
                                     validator: (value) {
                                       // if (value!.isEmpty) {
@@ -242,11 +276,7 @@ class _LoginPageState extends State<LoginPage> {
                               backgroundColor: MaterialStatePropertyAll(blue),
                             ),
                             onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const MainPage(),
-                                  ));
+                              loginUserWithEmailAndPassword(context);
                             }, //validate(context),
                             child: const Text(
                               'LOGIN',

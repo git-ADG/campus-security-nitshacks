@@ -1,5 +1,6 @@
 import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:campus_security_nithacks/pages/alert_page/alert_page.dart';
+import 'package:campus_security_nithacks/pages/homepage/homepage_details.dart';
 import 'package:campus_security_nithacks/pages/pages.dart';
 import 'package:campus_security_nithacks/pages/warning_pages/alarm_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,9 +24,9 @@ class _MainPageState extends State<MainPage> {
     // const SplashScreen(),
     const AlertPage(),
     const AlarmPage(),
-    const SplashScreen()
+    const HomepageDetails(),
   ];
-  int currentIndex = 1;
+  int currentIndex = 0;
 
   void navigate(int index) {
     setState(() {
@@ -38,8 +39,8 @@ class _MainPageState extends State<MainPage> {
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) async {
-        if (currentIndex != 1) {
-          navigate(1);
+        if (currentIndex != 0) {
+          navigate(0);
           return;
         }
         if (didPop) {

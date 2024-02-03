@@ -3,10 +3,13 @@ import 'package:campus_security_nithacks/pages/login_page/login_page.dart';
 import 'package:campus_security_nithacks/pages/signup_page/signup_page.dart';
 import 'package:campus_security_nithacks/pages/warning_pages/alarm_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'firebase_options.dart';
 import 'pages/pages.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  init();
   runApp(const CampusSecurity());
 }
 

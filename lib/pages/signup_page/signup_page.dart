@@ -8,7 +8,7 @@ import '../pages.dart';
 class SIgnUpPage extends StatefulWidget {
   const SIgnUpPage({super.key});
 
-  static const String routeName = '/loginPage';
+  static const String routeName = '/signupPage';
 
   @override
   State<SIgnUpPage> createState() => _SIgnUpPageState();

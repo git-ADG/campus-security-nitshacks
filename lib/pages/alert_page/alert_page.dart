@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AlertPage extends StatefulWidget {
   const AlertPage({super.key});
+  static const String routeName = "/alertPage";
 
   @override
   State<AlertPage> createState() => _AlertPageState();
@@ -97,7 +98,10 @@ class _AlertPageState extends State<AlertPage> {
                       ),
                       IconButton(
                           onPressed: () {},
-                          icon: Icon(Icons.camera_alt_outlined, size: 100,)),
+                          icon: Icon(
+                            Icons.camera_alt_outlined,
+                            size: 100,
+                          )),
                       Text(
                         "Add Picture(optional)",
                         style: TextStyle(color: Colors.white),

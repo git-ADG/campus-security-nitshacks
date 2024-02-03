@@ -1,4 +1,5 @@
 import 'package:campus_security_nithacks/config/utils/palette.dart';
+import 'package:campus_security_nithacks/pages/warning_pages/alarm_page.dart';
 import 'package:flutter/material.dart';
 
 class AlertPage extends StatefulWidget {
@@ -97,11 +98,26 @@ class _AlertPageState extends State<AlertPage> {
                       ),
                       IconButton(
                           onPressed: () {},
-                          icon: Icon(Icons.camera_alt_outlined, size: 100,)),
+                          icon: Icon(
+                            Icons.camera_alt_outlined,
+                            size: 100,
+                          )),
                       Text(
                         "Add Picture(optional)",
                         style: TextStyle(color: Colors.white),
                       ),
+                      ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStatePropertyAll(red)),
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AlarmPage(),
+                              )),
+                          child: Text(
+                            "Report",
+                            style: TextStyle(color: Colors.white),
+                          ))
                     ],
                   ),
                 )

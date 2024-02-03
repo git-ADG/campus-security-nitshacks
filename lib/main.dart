@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/pages.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const CampusSecurity());
@@ -13,6 +12,7 @@ class CampusSecurity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: FingerprintPage(),
     );
   }

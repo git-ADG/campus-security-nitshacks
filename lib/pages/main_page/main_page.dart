@@ -1,5 +1,6 @@
 import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:campus_security_nithacks/pages/pages.dart';
+import 'package:campus_security_nithacks/pages/warning_pages/alarm_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,7 +20,7 @@ class _MainPageState extends State<MainPage> {
   List pages = [
     const SplashScreen(),
     const SplashScreen(),
-    const SplashScreen(),
+    const AlarmPage(),
     const SplashScreen()
   ];
   int currentIndex = 1;

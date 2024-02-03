@@ -1,4 +1,5 @@
 import 'package:campus_security_nithacks/config/utils/palette.dart';
+import 'package:campus_security_nithacks/pages/alert_page/alert_page.dart';
 import 'package:campus_security_nithacks/pages/pages.dart';
 import 'package:campus_security_nithacks/pages/warning_pages/alarm_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,7 +20,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   List pages = [
     const SplashScreen(),
-    const SplashScreen(),
+    const AlertPage(),
     const AlarmPage(),
     const SplashScreen()
   ];
@@ -57,7 +58,7 @@ class _MainPageState extends State<MainPage> {
           showUnselectedLabels: false,
           selectedFontSize: 0,
           unselectedFontSize: 0,
-          selectedItemColor: Colors.red,
+          selectedItemColor: red,
           type: BottomNavigationBarType.fixed,
           onTap: navigate,
           currentIndex: currentIndex,
@@ -78,6 +79,7 @@ class _MainPageState extends State<MainPage> {
               label: "alert",
               icon: Icon(
                 Icons.crisis_alert_outlined,
+                color: Colors.red,
               ),
             ),
             BottomNavigationBarItem(

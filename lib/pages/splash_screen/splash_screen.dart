@@ -1,3 +1,4 @@
+import 'package:campus_security_nithacks/config/utils/palette.dart';
 import 'package:campus_security_nithacks/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: CircularProgressIndicator()),
+      body: Center(child: CircularProgressIndicator(color: red,)),
     );
   }
 }

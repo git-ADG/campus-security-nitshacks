@@ -29,7 +29,8 @@ class _LoginPageState extends State<LoginPage> {
         context,
         MaterialPageRoute(
           builder: (context) => MainPage(),
-        ),(route) => false,
+        ),
+        (route) => false,
       );
     } catch (error) {
       print("Login error: $error");
@@ -267,7 +268,13 @@ class _LoginPageState extends State<LoginPage> {
                               backgroundColor: MaterialStatePropertyAll(blue),
                             ),
                             onPressed: () {
-                              loginUserWithEmailAndPassword(context);
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MainPage(),
+                                  ),
+                                  (route) => false);
+                              //loginUserWithEmailAndPassword(context);
                             }, //validate(context),
                             child: const Text(
                               'LOGIN',

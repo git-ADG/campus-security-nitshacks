@@ -20,12 +20,13 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    const SplashScreen(),
+    const MapPage(),
+    // const SplashScreen(),
     const AlertPage(),
     const AlarmPage(),
     const HomepageDetails(),
   ];
-  int currentIndex = 1;
+  int currentIndex = 0;
 
   void navigate(int index) {
     setState(() {
@@ -38,8 +39,8 @@ class _MainPageState extends State<MainPage> {
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) async {
-        if (currentIndex != 1) {
-          navigate(1);
+        if (currentIndex != 0) {
+          navigate(0);
           return;
         }
         if (didPop) {

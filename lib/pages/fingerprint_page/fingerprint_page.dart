@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class FingerprintPage extends StatelessWidget {
   const FingerprintPage({super.key});
+  static const String routeName = '/fingerprintPage';
 
   @override
   Widget build(BuildContext context) {
